@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: rails_skeleton_development
+
+test:
+  <<: *default
+  database: rails_skeleton_test
+
+production:
+  <<: *default
+  database: rails_skeleton_production
+  username: rails_skeleton
+  password: <%= ENV['RAILS_SKELETON_DATABASE_PASSWORD'] %>
